@@ -30,6 +30,7 @@ public class DemoServiceImpl implements DemoService {
 		this.sfOA = sessionFactory;
 	}
 
+	// function to get all employee data
 	@Override
 	public List<V_EMPLOYEE> getAllVEmp() {
 		List<V_EMPLOYEE> list = new ArrayList<V_EMPLOYEE>();
@@ -42,6 +43,7 @@ public class DemoServiceImpl implements DemoService {
 		return list;
 	}
 
+	// function to get all employee possition
 	@Override
 	public List<M_POSITION> getListPosition() {
 		Session session = sfOA.openSession();
@@ -54,6 +56,7 @@ public class DemoServiceImpl implements DemoService {
 		return list;
 	}
 
+	// function to add object
 	public Boolean addObject(Object object) {
 		Session session = sfOA.openSession();
 		try {
@@ -72,6 +75,7 @@ public class DemoServiceImpl implements DemoService {
 
 	}
 
+	// function to delete object
 	public boolean deleteObject(Object object, String docNo) {
 		Session session = sfOA.openSession();
 		try {
@@ -90,7 +94,7 @@ public class DemoServiceImpl implements DemoService {
 
 	}
 
-
+	// function to execute query for map
 	public List<Map<String, Object>> getMapQuery(String q) {
 		Session session = sfOA.openSession();
 		Query query = session.createSQLQuery(q);
@@ -105,6 +109,7 @@ public class DemoServiceImpl implements DemoService {
 		return aliasToValueMapList;
 	}
 
+	// function to add object
 	@Override
 	public M_EMPLOYEE getMEmpById(String id) {
 		Session session = sfOA.openSession();
@@ -117,6 +122,7 @@ public class DemoServiceImpl implements DemoService {
 		}
 	}
 
+	// function to delete employee object
 	@Override
 	public void deleteEmployee(M_EMPLOYEE emp) {
 		Session session = sfOA.openSession();
@@ -133,6 +139,7 @@ public class DemoServiceImpl implements DemoService {
 		}
 	}
 
+	// function to add or update object
 	@Override
 	public void saveUpdateObject(Object object) {
 		Session session = sfOA.openSession();
@@ -146,7 +153,7 @@ public class DemoServiceImpl implements DemoService {
 			e.printStackTrace();
 			session.close();
 		}
-		
+
 	}
 
 }
